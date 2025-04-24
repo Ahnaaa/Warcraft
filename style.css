@@ -7,40 +7,227 @@
 
     }
     
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+
+    }
+
     .navbar {
-      background-color: rgb(135, 69, 69);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      color: white;
+        background-color: #3d2c33;
+        padding: 15px 20px;
+        margin: 15px 20px;
+        border-radius: 8px;
+
+    }
+
+    .navbar .logo {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
     }
 
     .navbar .logo img {
-      height: 40px;
+        height: 50px;
+        width: auto;
+        margin-right: 10px;
     }
 
-    .navbar .menu {
-      display: flex;
-      gap: 20px;
+    .navbar .logo .game-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #d4a017;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #1a0f07;
     }
 
-    .navbar .menu a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 12px;
+    .navbar .nav-link {
+        color: #fff ;
+        font-size: 16px;
+        margin: 0 15px;
+        position: relative;
     }
 
-    .navbar .menu a:hover {
-      background-color: #2d2f34;
-      border-radius: 4px;
+    .navbar .nav-link.new::before {
+        content: "NEW";
+        color: #1a0f07;
+        font-size: 10px;
+        background-color: #d4a017;
+        padding: 2px 5px;
+        border-radius: 3px;
+        position: absolute;
+        top: -10px;
+        left: 60%;
+    }
+
+    .navbar .dropdown-menu {
+        background-color: #2a1b0d;
+        border: none;
+        border-radius: 8px;
+        min-width: 280px;
+        padding: 18px 12px;
+        /* margin-top: 5px; */
+    }
+
+    .navbar .dropdown-menu a {
+        color: #fff;
+        padding: 18px 16px;
+        font-size: 16px;
+    }
+
+    .navbar .dropdown-menu a:hover {
+        background-color: #3a2b1d;
+    }
+
+    .navbar .dropdown-menu h4 {
+        color: #fff;
+        margin: 10px 16px;
+        font-size: 14px;
+    }
+
+    .navbar .search-icon {
+        color: #fff;
+        font-size: 20px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .navbar .account {
+        color: #d4a017 !important;
+        text-decoration: none;
+        margin-right: 20px;
+    }
+
+    .navbar .account:hover {
+        color: #fff !important;
+    }
+
+    .navbar .try-free {
+        background-color: #180f01;
+        color: #fff !important;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    .navbar .try-free:hover {
+        background-color: #1f1202;
+        color: #fff !important;
+    }
+
+    .navbar .subscribe {
+        background-color: #aa2409;
+        color: #fff !important;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    .navbar .subscribe:hover {
+        background-color: #b71c1c;
+        color: #fff !important;
+    }
+
+    .navbar .dropdown-toggle::after {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .down {
+        transform: rotate(45deg);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .navbar .nav-link,
+        .navbar .account,
+        .navbar .try-free,
+        .navbar .subscribe,
+        .navbar .search-icon {
+            margin: 10px 15px;
+            font-size: 18px;
+        }
+
+        .navbar .dropdown-menu {
+            position: static;
+            width: 100%;
+            background-color: #2a1b0d;
+            box-shadow: none;
+        }
+
+        .navbar .navbar-collapse {
+            align-items: flex-start;
+        }
+
+        .navbar .navbar-nav,
+        .navbar .right-section {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .navbar .right-section {
+            padding: 10px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .navbar .logo img {
+            height: 40px;
+        }
+
+        .navbar .logo .game-icon {
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+        }
+
+        .navbar .try-free,
+        .navbar .subscribe {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+    }
+    .navbar .dropdown-menu {
+        transition: all 0.2s ease-in-out 0.1s; /* 0.1s delay */
+    }
+    @media (min-width: 769px) {
+    .navbar .nav-item.dropdown:hover .dropdown-menu,
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .navbar .dropdown-menu {
+        margin-top: 0; 
+        transition: all 0.2s ease-in-out; 
+    }
+
+    .navbar .dropdown-toggle::after {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    }
+
+    .navbar .dropdown-menu {
+        display: none;
+    }
+
+    .navbar .dropdown-menu.show {
+        display: block;
     }
 
     .box {
-        padding: 0; /* Remove padding to let image fill the box */
-        overflow: hidden; /* Prevent image overflow */
-        position: relative; /* 
+        padding: 0; 
+        overflow: hidden; 
+        position: relative; 
     }
     .box-1 {
         min-height: 450px; /* Fixed height for Box 1 */
@@ -80,12 +267,12 @@
 
 
     .box-4 {
-        /* background-image: url('img3.jpeg');     */
+
         display: flex;
-        align-items: center; /* Vertically center content */
+        align-items: center;
         padding: 20px;
-        border: 1px solid #dee2e6; /* Consistent with previous boxes */
-        /* min-height: 200px; Consistent height with previous Box 2 */
+        border: 1px solid #dee2e6; 
+        
     }
     .box-4 img {
         height: 170px;
@@ -95,7 +282,7 @@
         
     }
     .box-4 .text-content {
-        flex-grow: 1; /* Text takes remaining space */
+        flex-grow: 1; 
     }
     .box-4 h3 {
         font-size: 1.5rem;
@@ -104,4 +291,156 @@
     .box-4 p {
         font-size: 1rem;
         margin: 0 0 10px 0; /* Spacing between paragraphs */
+    }
+  
+    .footer {
+        background-color: #140c09;
+        color: #fff;
+        padding: 20px 0;
+        font-size: 0.9rem; /* Base font size for scalability */
+    }
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .footer-section h2 {
+        color: #ebdec2;
+        margin-bottom: 10px;
+        font-size: 1.1rem; /* Responsive font size */
+        text-transform: uppercase;
+    }
+    .social-icons a {
+        margin: 0 10px;
+        color: #f8b700;
+        font-size: 1.8rem; /* Default icon size */
+        text-decoration: none;
+    }
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap; /* Allow links to wrap on small screens */
+    }
+    .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+    .language-selector {
+        position: absolute;
+        right: 20px;
+        top: 50px;
+        color: #fff;
+    }
+    .language-selector select {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        border-top: 1px solid #333;
+    }
+    .footer-bottom-left {
+        display: flex;
+        align-items: center;
+    }
+    .footer-bottom-left img {
+        height: 40px;
+        margin-right: 10px;
+    }
+    .footer-bottom-center {
+        text-align: center;
+    }
+    .footer-bottom-center p {
+        margin: 5px 0;
+        font-size: 0.75rem;
+        color: #999;
+    }
+    .footer-bottom-center a {
+        color: #999;
+        margin: 0 5px;
+        text-decoration: none;
+        font-size: 0.75rem;
+    }
+    .footer-bottom-center a:hover {
+        text-decoration: underline;
+    }
+    .footer-bottom-right .social-icons {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* Media Queries for Small Screens */
+    @media (max-width: 768px) {
+        .footer {
+            padding: 15px 0;
+            font-size: 0.85rem; /* Slightly smaller base font */
+        }
+        .footer-section h2 {
+            font-size: 1rem;
+        }
+        .social-icons a {
+            font-size: 1.5rem; /* Smaller icons */
+            margin: 0 8px;
+        }
+        .footer-links {
+            gap: 10px;
+            flex-direction: column; /* Stack links vertically */
+        }
+        .footer-links a {
+            font-size: 0.85rem;
+        }
+        .language-selector {
+            position: static; /* Remove absolute positioning */
+            text-align: center;
+            margin: 10px 0;
+        }
+        .footer-bottom {
+            flex-direction: column; /* Stack bottom section */
+            align-items: center;
+            padding: 10px;
+        }
+        .footer-bottom-left {
+            margin-bottom: 10px;
+        }
+        .footer-bottom-right .social-icons {
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .footer-bottom-center p,
+        .footer-bottom-center a {
+            font-size: 0.7rem; /* Smaller text */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .footer {
+            font-size: 0.8rem;
+        }
+        .footer-section h2 {
+            font-size: 0.9rem;
+        }
+        .social-icons a {
+            font-size: 1.2rem; /* Even smaller icons */
+            margin: 0 6px;
+        }
+        .footer-links a {
+            font-size: 0.8rem;
+        }
+        .footer-bottom-left img {
+            height: 30px; /* Smaller logo */
+        }
+        .language-selector select {
+            font-size: 0.75rem;
+        }
     }
